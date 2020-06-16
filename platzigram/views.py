@@ -1,6 +1,6 @@
 """ Platzigram views """
 #Django
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 
 #Utilities
 from datetime import datetime
@@ -12,5 +12,9 @@ def hello_world(request):
 
 
 def hello(request):
-    import pdb; pdb.set_trace()
-    return HttpResponse('Hello')
+    #import pdb; pdb.set_trace()
+    num = request.GET['numbers'].split(',')
+    num.sort()
+    resp = JsonResponse(num, safe=False)
+
+    return HttpResponse(resp)
