@@ -84,7 +84,10 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': '',
         'HOST': '127.0.0.1',
-        'PORT': '3307',
+        # PORT para mi casa
+        # 'PORT': '3307',
+        # PORT para el trabajo
+        'PORT': '3306',
     }
 }
 

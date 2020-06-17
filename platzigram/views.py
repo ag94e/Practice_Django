@@ -15,10 +15,7 @@ def sorted_intergers(request):
     #import pdb; pdb.set_trace()
     num = [int(i) for i in request.GET['numbers'].split(',')]
     num_sorted = sorted(num)
-    resp = JsonResponse(num, safe=False)
-<<<<<<< HEAD
-    return HttpResponse(resp)
-=======
+    resp = JsonResponse(num_sorted, safe=False)
 
     return HttpResponse(resp)
 
@@ -29,4 +26,3 @@ def say_hi(request, name, age):
     else:
         message = f'Welcome to platzigram {name}'
     return HttpResponse(message)
->>>>>>> 761fcc35d0613c706e4fa455485054c693c3d7ad
