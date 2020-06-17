@@ -11,10 +11,18 @@ def hello_world(request):
     return HttpResponse(f'Current server time: {str(now)}')
 
 
-def hello(request):
+def sorted_intergers(request):
     #import pdb; pdb.set_trace()
-    num = request.GET['numbers'].split(',')
-    num.sort()
+    num = [int(i) for i in request.GET['numbers'].split(',')]
+    num_sorted = sorted(num)
     resp = JsonResponse(num, safe=False)
 
     return HttpResponse(resp)
+
+
+def say_hi(request, name, age):
+    if age < 12:
+        message = f'Sorry {name} you are not allowed here'
+    else:
+        message = f'Welcome to platzigram {name}'
+    return HttpResponse(message)
