@@ -16,5 +16,4 @@ def hello(request):
     num = request.GET['numbers'].split(',')
     num.sort()
     resp = JsonResponse(num, safe=False)
-
     return HttpResponse(resp)
