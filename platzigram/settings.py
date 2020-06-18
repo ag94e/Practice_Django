@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     #Local apps
     'posts',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -85,9 +86,9 @@ DATABASES = {
         'PASSWORD': '',
         'HOST': '127.0.0.1',
         # PORT para mi casa
-        # 'PORT': '3307',
+        'PORT': '3307',
         # PORT para el trabajo
-        'PORT': '3306',
+        # 'PORT': '3306',
     }
 }
 
