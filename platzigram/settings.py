@@ -59,7 +59,9 @@ ROOT_URLCONF = 'platzigram.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -86,9 +88,9 @@ DATABASES = {
         'PASSWORD': '',
         'HOST': '127.0.0.1',
         # PORT para mi casa
-        # 'PORT': '3307',
+        'PORT': '3307',
         # PORT para el trabajo
-        'PORT': '3306',
+        # 'PORT': '3306',
     }
 }
 
@@ -130,3 +132,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
